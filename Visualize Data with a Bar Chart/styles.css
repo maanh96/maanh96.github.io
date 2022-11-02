@@ -1,0 +1,51 @@
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 560px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 20px;
+    align-self: center;
+    position: relative;
+}
+
+#title {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.barChart {
+    position: absolute;
+    top: 6em;
+}
+
+.bar {
+    fill: #146551;
+}
+
+.bar:hover {
+    fill: #8FC1B5;
+}
+
+#tooltip {
+    background: rgba(69, 77, 93, .9);
+    border-radius: .1rem;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    max-width: 320px;
+    padding: .2rem .4rem;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: pre;
+    z-index: 300;
+    visibility: hidden;
+    text-align: center;
+}
