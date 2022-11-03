@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,ital,wght@75,0,400;75,0,700;75,1,400;1,700&display=swap');
+@font-face {
+    font-family: Open Sans;
+    src: url('/fonts/OpenSans-VariableFont_wdth,wght.woff2') format('woff2 supports variations'),
+        url('/fonts/OpenSans-VariableFont_wdth,wght.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-stretch: 25% 150%;
+    font-display: swap;
+    font-style: normal;
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
