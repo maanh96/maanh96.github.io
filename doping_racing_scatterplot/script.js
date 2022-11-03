@@ -30,9 +30,7 @@ var color = d3.scaleOrdinal(d3.schemeCategory10);
 d3.json(url)
     .then(data => {
         //Convert string to time
-        data.forEach(d => {
-            d.Time = parseTime(d.Time);
-        });
+        data.forEach(d => d.Time = parseTime(d.Time));
 
         //Create scale functions
         var xScale = d3.scaleLinear()
@@ -40,7 +38,7 @@ d3.json(url)
             .range([padding * 4, w - padding * 2]);
 
         var yScale = d3.scaleTime()
-            .domain([d3.max(data, d => d.Time), d3.min(data, d => d.Time)])
+            .domain(d3.extent(data, d => d.Time))
             .range([h - padding, padding]);
 
         //Create axes
@@ -74,14 +72,14 @@ d3.json(url)
             .attr("data-xvalue", d => d.Year)
             .attr("data-yvalue", d => d.Time.toISOString())
             .style("fill", d => color(d.Doping !== ""))
-            .on("mouseover", function (event, d) {
+            .on("mouseover", (event, d) => {
                 tooltip.style("visibility", "visible")
                     .text(d.Name + ": " + d.Nationality + "\nYear: " + d.Year + ", Time: " + formatTime(d.Time) + (d.Doping ? '\n\n' + d.Doping : ""))
                     .style("top", event.pageY - 30 + "px")
                     .style("left", event.pageX + "px")
                     .attr("data-year", d.Year);
             })
-            .on("mouseout", function () {
+            .on("mouseout", () => {
                 tooltip.style("visibility", "hidden");
             });
 

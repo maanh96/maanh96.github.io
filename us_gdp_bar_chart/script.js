@@ -33,7 +33,7 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 
         //Create time/linear scale
         var xScale = d3.scaleTime()
-            .domain([d3.min(dataset, (d) => d[0]), d3.max(dataset, (d) => d[0])])
+            .domain(d3.extent(dataset, (d) => d[0]))
             .range([padding * 4, w - padding * 2]);
 
         var yScale = d3.scaleLinear()
