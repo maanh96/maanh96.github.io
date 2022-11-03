@@ -53,11 +53,10 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
             .attr("data-date", (d) => formatTime2(d[0]))
             .attr("data-gdp", (d) => d[1])
             .on("mouseover", function (event, d) {
-                const [x, y] = d3.pointer(event);
                 tooltip.style("visibility", "visible")
                     .text(formatTime(d[0]) + "\n$" + d[1] + " Billion")
-                    .style("top", (y) + 40 + "px")
-                    .style("left", (x) + "px")
+                    .style("top", event.pageY - 40 + "px")
+                    .style("left", event.pageX + "px")
                     .attr("data-date", formatTime2(d[0]));
             })
             .on("mouseout", function () {

@@ -40,4 +40,5 @@ body {
     z-index: 300;
     visibility: hidden;
     text-align: center;
+    pointer-events: none;
 }

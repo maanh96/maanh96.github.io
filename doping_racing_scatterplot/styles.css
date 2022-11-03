@@ -28,14 +28,14 @@ body {
 
 #tooltip {
     background: lightsteelblue;
-    border-radius: .1rem;
+    border-radius: 5px;
     display: block;
     font-size: 14px;
     padding: 10px;
     position: absolute;
     text-overflow: ellipsis;
     white-space: pre;
-    border-radius: 8px;
     visibility: hidden;
     text-align: left;
+    pointer-events: none;
 }
