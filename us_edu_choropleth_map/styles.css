@@ -23,7 +23,7 @@ body {
 
 #source {
     text-align: right;
-    margin-right: 20px;
+    margin-right: calc((100vw - 900px)/2);
 }
 
 #tooltip {
