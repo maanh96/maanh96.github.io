@@ -11,7 +11,7 @@ var padding = 20;
 var svg = d3.select(".map")
     .append("svg")
     .attr("width", w)
-    .attr("height", h);
+    .attr("height", h + padding * 3);
 
 //Create tooltip
 var tooltip = d3.select(".map")
@@ -40,7 +40,7 @@ Promise.all([d3.json(eduurl), d3.json(countyurl)])
 
         //Draw the map
         svg.append("g")
-            .attr("transform", "translate(0, 15)")
+            .attr("transform", "translate(0, 10)")
             .selectAll("path")
             .data(topojson.feature(county, county.objects.counties).features)
             .join("path")
@@ -102,6 +102,16 @@ Promise.all([d3.json(eduurl), d3.json(countyurl)])
                 .tickSize(0)
             )
             .call(g => g.select(".domain").remove());
+
+        //Add more info
+        svg.append("a")
+            .attr("xlink:href", "https://www.ers.usda.gov/data-products/county-level-data-sets/download-data.aspx")
+            .append("text")
+            .attr("x", w - padding * 2)
+            .attr("y", h + padding * 2)
+            .text("Source: USDA Economic Research Service")
+            .attr("text-anchor", "end")
+            .attr("id", "source");
 
     })
     .catch(err => console.log(err));

@@ -22,8 +22,17 @@ body {
 }
 
 #source {
-    text-align: right;
-    margin-right: calc((100vw - 900px)/2);
+    fill: blue;
+}
+
+#source:hover,
+#source:active {
+    fill: darkblue;
+    text-decoration: underline;
+}
+
+#source:visited {
+    fill: darkmagenta;
 }
 
 #tooltip {

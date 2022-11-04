@@ -7,7 +7,7 @@ var padding = 20;
 var svg = d3.select(".barChart")
     .append("svg")
     .attr("width", w)
-    .attr("height", h);
+    .attr("height", h + padding * 3);
 
 //For converting strings to date
 var parseTime = d3.timeParse("%Y-%m-%d");
@@ -81,5 +81,13 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
             .attr("id", "y-axis")
             .attr("transform", "translate(" + (padding * 4) + ", 0)")
             .call(yAxis);
+
+        // Add source info
+        svg.append("text")
+            .attr("x", w - padding * 2)
+            .attr("y", h + padding * 2)
+            .text("More Information: http://www.bea.gov/national/pdf/nipaguid.pdf")
+            .attr("text-anchor", "end")
+            .attr("class", "info");
 
     }); 
