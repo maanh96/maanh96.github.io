@@ -48,7 +48,7 @@ d3.json(url)
             .range([padding, h - padding]);
 
         var colorScale = d3.scaleLinear()
-            .domain(d3.extent(data.monthlyVariance, d => d.variance))
+            .domain(d3.extent(data.monthlyVariance, d => data.baseTemperature + d.variance))
             .range([1, 0]);
 
         //Create axes
@@ -79,7 +79,7 @@ d3.json(url)
             .attr("y", d => yScale(d.month))
             .attr('width', d => xScale.bandwidth(d.year))
             .attr('height', d => yScale.bandwidth(d.month))
-            .attr("fill", d => d3.interpolateRdYlBu(colorScale(d.variance)))
+            .attr("fill", d => d3.interpolateRdYlBu(colorScale(data.baseTemperature + d.variance)))
             .on("mouseover", (event, d) => {
                 tooltip.style("visibility", "visible")
                     .text(formatTime(d.month) + " " + d.year + "\nTemp: " + d3.format('.2f')(data.baseTemperature + d.variance) + "°C\nVar: " + d3.format('.2f')(d.variance) + "°C")
@@ -98,6 +98,7 @@ d3.json(url)
             .attr("height", 60)
             .attr("id", "legend");
 
+        //legend color bar
         legend.selectAll("rect")
             .data(d3.schemeRdYlBu[10].reverse())
             .enter()
@@ -109,20 +110,20 @@ d3.json(url)
             .style("fill", d => d);
 
         var legendX = d3.scaleLinear()
-            .domain(d3.extent(data.monthlyVariance, d => data.baseTemperature + d.variance))
+            .domain(colorScale.domain())
             .range([0, 299]);
 
         var minTemp = data.baseTemperature + d3.min(data.monthlyVariance, d => d.variance);
         var maxTemp = data.baseTemperature + d3.max(data.monthlyVariance, d => d.variance);
-        var step = (maxTemp - minTemp) / 10
-
-        var legendxAxis = d3.axisBottom(legendX)
-            .tickValues(d3.range(minTemp, (maxTemp + step), step))
-            .tickFormat(d3.format('.1f'));
+        var step = (maxTemp - minTemp) / 10;
 
         legend.append("g")
-            .attr("transform", "translate(80, 35)")
-            .call(legendxAxis);
+            .attr("transform", "translate(80, 40)")
+            .call(d3.axisBottom(legendX)
+                .tickValues(d3.range(minTemp, (maxTemp + step), step))
+                .tickFormat(d3.format('.1f'))
+                .tickSize(0))
+            .call(g => g.select(".domain").remove());
 
     })
 

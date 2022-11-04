@@ -8,7 +8,7 @@ body {
     padding: 20px 0;
 }
 
-.chart {
+.map {
     margin: auto;
     padding: 20px 0;
 }
@@ -17,8 +17,13 @@ body {
     font-size: 2.5em;
 }
 
-#subtitle {
+#description {
     font-size: 1.5em;
+}
+
+#source {
+    text-align: right;
+    margin-right: 200px;
 }
 
 #tooltip {
@@ -27,12 +32,11 @@ body {
     border-radius: 6px;
     display: block;
     font-size: 1em;
-    padding: 8px;
+    padding: 10px;
     position: absolute;
     text-overflow: ellipsis;
     white-space: pre;
     visibility: hidden;
-    text-align: center;
-    font-size: 0.9em;
+    text-align: left;
     pointer-events: none;
 }

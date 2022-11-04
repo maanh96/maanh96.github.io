@@ -25,6 +25,11 @@ body {
     fill: #8FC1B5;
 }
 
+#source {
+    text-align: right;
+    margin-right: 250px;
+}
+
 #tooltip {
     background: rgba(69, 77, 93, .9);
     border-radius: .1rem;
