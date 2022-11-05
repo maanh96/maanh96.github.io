@@ -1,14 +1,14 @@
 body {
     width: 100vw;
     height: 100vh;
-    text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-stretch: 75%;
+    text-align: center;
     padding: 20px 0;
 }
 
-.barChart {
+.treemap {
     margin: auto;
     padding: 20px 0;
 }
@@ -17,41 +17,21 @@ body {
     font-size: 2.5em;
 }
 
-.bar {
-    fill: #146551;
-}
-
-.bar:hover {
-    fill: #8FC1B5;
+#description {
+    font-size: 1.5em;
 }
 
 #tooltip {
     background: rgba(69, 77, 93, .9);
-    border-radius: .1rem;
     color: #fff;
+    border-radius: 6px;
     display: block;
-    font-size: 14px;
-    max-width: 320px;
-    padding: .2rem .4rem;
+    font-size: 0.8em;
+    padding: 10px;
     position: absolute;
     text-overflow: ellipsis;
     white-space: pre;
-    z-index: 300;
     visibility: hidden;
-    text-align: center;
+    text-align: left;
     pointer-events: none;
-}
-
-.info {
-    fill: blue;
-}
-
-.info:hover,
-.info:active {
-    fill: darkblue;
-    text-decoration: underline;
-}
-
-.info:visited {
-    fill: darkmagenta;
 }

@@ -71,7 +71,6 @@ Promise.all([d3.json(eduurl), d3.json(countyurl)])
 
         //Create legend
         var legend = svg.append('g')
-            .attr('class', 'key')
             .attr('id', 'legend')
             .attr('transform', 'translate(550, 5)');
 

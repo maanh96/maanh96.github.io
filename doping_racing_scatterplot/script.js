@@ -100,6 +100,6 @@ d3.json(url)
             .attr("dx", "-0.5em")
             .attr('dy', '0.55em')
             .attr("text-anchor", "end")
-            .text((d) => d ? "Riders with doping allegations" : "No doping allegations");
+            .text(d => d ? "Riders with doping allegations" : "No doping allegations");
 
     });

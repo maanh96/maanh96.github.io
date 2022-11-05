@@ -83,10 +83,12 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
             .call(yAxis);
 
         // Add source info
-        svg.append("text")
+        svg.append("a")
+            .attr("xlink:href", "https://www.bea.gov/resources/methodologies/nipa-handbook")
+            .append("text")
             .attr("x", w - padding * 2)
             .attr("y", h + padding * 2)
-            .text("More Information: http://www.bea.gov/national/pdf/nipaguid.pdf")
+            .text("More Information: NIPA Handbook")
             .attr("text-anchor", "end")
             .attr("class", "info");
 

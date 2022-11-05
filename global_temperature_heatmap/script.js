@@ -82,7 +82,7 @@ d3.json(url)
             .attr("fill", d => d3.interpolateRdYlBu(colorScale(data.baseTemperature + d.variance)))
             .on("mouseover", (event, d) => {
                 tooltip.style("visibility", "visible")
-                    .text(formatTime(d.month) + " " + d.year + "\nTemp: " + d3.format('.2f')(data.baseTemperature + d.variance) + "°C\nVar: " + d3.format('.2f')(d.variance) + "°C")
+                    .html("<b>" + formatTime(d.month) + " " + d.year + "</b>\nTemp: " + d3.format('.2f')(data.baseTemperature + d.variance) + "°C\nVar: " + d3.format('.2f')(d.variance) + "°C")
                     .style("top", event.pageY - 60 + "px")
                     .style("left", event.pageX + "px")
                     .attr("data-year", d.year);
