@@ -1,22 +1,22 @@
 body {
+    background-color: #fffacd;
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 .container {
-    background-color: #fffacd;
-    height: 100vh;
-    width: 100vw;
+    display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
+    height: 100%;
+    width: 100%;
     z-index: -1;
 }
 
 .cat {
-    position: absolute;
-    top: 30%;
-    left: 40%;
+    margin: auto;
 }
 
 .face {
@@ -37,13 +37,13 @@ body {
 }
 
 .ear-left {
-    bottom: 30px;
+    bottom: 28px;
     right: 10px;
     transform: rotate(-30deg);
 }
 
 .ear-right {
-    bottom: 90px;
+    bottom: 88px;
     left: 130px;
     transform: rotate(30deg);
 }
@@ -54,7 +54,7 @@ body {
     border-bottom: 60px solid #d36149;
     border-left: 40px solid transparent;
     border-right: 5px solid transparent;
-    right: 39px;
+    right: 40px;
     position: relative;
 }
 
