@@ -28,8 +28,7 @@
                     <div class="eye-pupil"></div>
                 </div>
                 <div class="nose">
-                    <div class="line line1"></div>
-                    <div class="line line2"></div>
+                    <div class="line"></div>
                 </div>
             </div>
             <div class="body">
@@ -47,7 +46,7 @@
             eyes.forEach((eye) => {
                 var rect = eye.getBoundingClientRect();
                 var x = (e.pageX - rect.left) / 115 + "px";
-                var y = (e.pageY - rect.top) / 55 + "px";
+                var y = (e.pageY - rect.top) / 60 + "px";
                 eye.style.transform = "translate3d(" + x + "," + y + ", 0px)";
             });
         });

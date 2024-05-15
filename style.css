@@ -93,8 +93,7 @@ body {
     border-radius: 50%;
     position: relative;
     top: 4px;
-    left: 4px;
-    content: ' ';
+    left: 5px;
 }
 
 .nose {
@@ -110,28 +109,12 @@ body {
 
 /*
 .line {
-    position: absolute;
-    width: 90%;
-    height: 100%;
-    border: 1px solid #d36149;
-    top: 80%;
-    border-radius: 100px;
-    border-top-color: transparent;
-    z-index: -1;
-}
-
-.line1 {
-    border-left-color: transparent;
-    right: calc(50% - 1px);
-    transform-origin: top right;
-    transform: rotate(10deg);
-}
-
-.line2 {
-    border-right-color: transparent;
-    left: calc(50% - 1px);
-    transform-origin: top left;
-    transform: rotate(-10deg);
+    background-color: #d36149;
+    height: 1px;
+    width: 16px;
+    position: relative;
+    top: 20px;
+    left: 1px;
 }
 */
 
@@ -147,18 +130,18 @@ body {
 
 .paw {
     background-color: #33292b;
-    height: 10px;
+    height: 20px;
     width: 22px;
     position: relative;
     border-radius: 0 0 10px 10px;
 }
 
 .paw-left {
-    top: 120px;
+    top: 110px;
 }
 
 .paw-right {
-    top: 110px;
+    top: 90px;
     left: 50px;
 }
 
@@ -167,7 +150,7 @@ body {
     height: 20px;
     width: 100px;
     position: relative;
-    top: 80px;
+    top: 60px;
     left: 100px;
     border-radius: 0 20px 20px 0;
 }
