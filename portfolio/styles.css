@@ -74,6 +74,8 @@ h1 {
 
 .images {
     padding: 20px;
+    display: flex;
+    align-items: center;
 }
 
 img {
